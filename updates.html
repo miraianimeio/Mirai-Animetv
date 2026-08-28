@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updates - Mirai</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./updates.css">
+    <link rel="stylesheet" href="./site-bottom-button.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-bar">
+                <input type="checkbox" id="check">
+                <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+                <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+                <li class="logo"><a href="home.html"><img src="logo.png" alt="Logo"></a></li>
+                <li class="nav-search-item">
+                    <div class="search-wrap">
+                        <span class="search-icon"><i class="fas fa-search"></i></span>
+                        <input type="text" id="animeSearchBox" placeholder="Search anime...">
+                        <kbd class="search-shortcut">Ctrl Y</kbd>
+                    </div>
+                </li>
+                <span class="menu">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="manga-index.html">Manga</a></li>
+                    <li><a href="all-anime-index.html">All Anime</a></li>
+                    <li><a href="history.html"><i class="fas fa-history"></i> History</a></li>
+                    <li><a href="my-list.html"><i class="fas fa-list"></i> My List</a></li>
+                    <li><a href="updates.html" aria-current="page">Updated</a></li>
+                </span>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="updates-page">
+        <h1 class="updates-heading">What's New</h1>
+        <p class="updates-intro">Recent improvements to make MiraiAnime smoother, faster, and easier to browse.</p>
+        <section class="updates-list" aria-label="Recent updates">
+            <article class="update-item">
+                <time class="update-date" datetime="2026-08-21">Aug 21, 2026</time>
+                <div class="update-content">
+                    <h2>Search got a quick upgrade</h2>
+                    <p>Live anime suggestions now show posters, scores, formats, episode counts, and release years while you type.</p>
+                    <div class="update-tags"><span class="update-tag">Search</span><span class="update-tag">Navigation</span></div>
+                </div>
+            </article>
+            <article class="update-item">
+                <time class="update-date" datetime="2026-08-21">Aug 21, 2026</time>
+                <div class="update-content">
+                    <h2>Smoother card browsing</h2>
+                    <p>Anime rows can now be grabbed and dragged, and page changes use lightweight directional card transitions.</p>
+                    <div class="update-tags"><span class="update-tag">Carousel</span><span class="update-tag">Animation</span></div>
+                </div>
+            </article>
+            <article class="update-item">
+                <time class="update-date" datetime="2026-08-21">Aug 21, 2026</time>
+                <div class="update-content">
+                    <h2>Better performance on older devices</h2>
+                    <p>Search requests are debounced and cached, images load lazily, and off-screen motion pauses to reduce battery and CPU use.</p>
+                    <div class="update-tags"><span class="update-tag">Performance</span><span class="update-tag">Low-end friendly</span></div>
+                </div>
+            </article>
+            <article class="update-item">
+                <time class="update-date" datetime="2026-08-21">Aug 21, 2026</time>
+                <div class="update-content">
+                    <h2>Airing schedule is easier to find</h2>
+                    <p>The homepage now has its own airing schedule below Top Anime, while the All Anime schedule stays available on its page.</p>
+                    <div class="update-tags"><span class="update-tag">Airing</span><span class="update-tag">Homepage</span></div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="site-bottom-button.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Mirai - Watch Anime Online, Free Anime Streaming</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="apple-touch-icon" href="./favicon-180.png">
+
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="site-bottom-button.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="brand">
+        <img src="mirai-logo.png" alt="Mirai Anime">
+    </div>
+
+    <h1>Create Account</h1>
+    <p class="subtitle">Join the Mirai community today 🚀</p>
+
+    <p class="error-msg" id="errorMsg">Please fill in all fields correctly and agree to the terms.</p>
+
+    <form id="registerForm">
+
+        <div class="row">
+
+            <div class="group">
+                <label>First Name</label>
+                <div class="input-box">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="firstName" placeholder="John" required>
+                </div>
+            </div>
+
+            <div class="group">
+                <label>Last Name</label>
+                <div class="input-box">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="lastName" placeholder="Doe" required>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="group">
+            <label>Email Address</label>
+            <div class="input-box">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" id="regEmail" placeholder="john@example.com" required>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="group">
+                <label>Password</label>
+                <div class="input-box">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="regPassword" placeholder="******" required>
+                </div>
+            </div>
+
+            <div class="group">
+                <label>Confirm Password</label>
+                <div class="input-box">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="confirmPassword" placeholder="******" required>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="checkbox">
+            <input type="checkbox" id="agreeTerms">
+            <label for="agreeTerms">I agree to the <a href="#">Terms &amp; Conditions</a></label>
+        </div>
+
+        <button type="submit">
+            <i class="fa-solid fa-user-plus"></i>
+            Create Account
+        </button>
+
+    </form>
+
+    <p class="or">or sign up with</p>
+
+    <div class="social">
+        <button type="button">
+            <i class="fa-brands fa-google"></i>
+            Google
+        </button>
+
+        <button type="button">
+            <i class="fa-brands fa-discord"></i>
+            Discord
+        </button>
+    </div>
+
+    <div class="bottom">
+        Already have an account?
+        <a href="index.html">Login</a>
+    </div>
+
+    <a href="#" class="skip-link" id="guestLink"><i class="fa-solid fa-user"></i> Continue as Guest</a>
+
+</div>
+
+<script>
+    function getUsers() {
+        try { return JSON.parse(localStorage.getItem('mirai_users')) || []; }
+        catch { return []; }
+    }
+
+    function saveUsers(users) {
+        localStorage.setItem('mirai_users', JSON.stringify(users));
+    }
+
+    document.getElementById('registerForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const firstName = document.getElementById('firstName').value.trim();
+        const lastName = document.getElementById('lastName').value.trim();
+        const email = document.getElementById('regEmail').value.trim();
+        const password = document.getElementById('regPassword').value.trim();
+        const confirmPassword = document.getElementById('confirmPassword').value.trim();
+        const agreed = document.getElementById('agreeTerms').checked;
+        const errorMsg = document.getElementById('errorMsg');
+
+        if (!firstName || !lastName || !email || !password) {
+            errorMsg.textContent = 'Please fill in all fields.';
+            errorMsg.style.display = 'block';
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            errorMsg.textContent = 'Passwords do not match.';
+            errorMsg.style.display = 'block';
+            return;
+        }
+
+        if (!agreed) {
+            errorMsg.textContent = 'You must agree to the Terms & Conditions.';
+            errorMsg.style.display = 'block';
+            return;
+        }
+
+        const users = getUsers();
+
+        if (users.find(u => u.email.toLowerCase() === email.toLowerCase())) {
+            errorMsg.textContent = 'An account with this email already exists.';
+            errorMsg.style.display = 'block';
+            return;
+        }
+
+        const newUser = {
+            firstName,
+            lastName,
+            email,
+            password,
+            displayName: `${firstName} ${lastName}`,
+            avatar: '',
+            bio: '',
+            joined: new Date().toISOString()
+        };
+
+        users.push(newUser);
+        saveUsers(users);
+
+        localStorage.setItem('mirai_current_user', email);
+        window.location.href = 'home.html';
+    });
+
+    document.getElementById('guestLink').addEventListener('click', function (e) {
+        e.preventDefault();
+        localStorage.removeItem('mirai_current_user');
+        window.location.href = 'home.html';
+    });
+</script>
+<script src="site-bottom-button.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Anime - Mirai</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./stylesheet.css">
+    <link rel="stylesheet" href="./airing-schedule.css">
+    <link rel="stylesheet" href="./site-bottom-button.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+</head>
+<body>
+
+    <header>
+        <nav>
+           <ul class='nav-bar'>
+                <input type='checkbox' id='check' />
+                <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+                <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+
+                <li class='logo'>
+                    <a href='home.html'><img src='logo.png' alt="Logo" /></a>
+                </li>
+
+                <li class="nav-search-item">
+                    <div class="search-wrap">
+                        <span class="search-icon" id="animeSearchBtn" style="cursor: pointer;"><i class="fas fa-search"></i></span>
+                        <input type="text" id="animeSearchBox" placeholder="Search anime...">
+                        <kbd class="search-shortcut">Ctrl Y</kbd>
+                    </div>
+                </li>
+
+                <span class="menu">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="manga-index.html">Manga</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                            Genre <i class="fas fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><button class="genre-link" data-genre="Action">Action</button></li>
+                            <li><button class="genre-link" data-genre="Adventure">Adventure</button></li>
+                            <li><button class="genre-link" data-genre="Comedy">Comedy</button></li>
+                            <li><button class="genre-link" data-genre="Drama">Drama</button></li>
+                            <li><button class="genre-link" data-genre="Ecchi">Ecchi</button></li>
+                            <li><button class="genre-link" data-genre="Fantasy">Fantasy</button></li>
+                            <li><button class="genre-link" data-genre="Horror">Horror</button></li>
+                            <li><button class="genre-link" data-genre="Mahou Shoujo">Magical Girl</button></li>
+                            <li><button class="genre-link" data-genre="Mecha">Mecha</button></li>
+                            <li><button class="genre-link" data-genre="Music">Music</button></li>
+                            <li><button class="genre-link" data-genre="Mystery">Mystery</button></li>
+                            <li><button class="genre-link" data-genre="Psychological">Psychological</button></li>
+                            <li><button class="genre-link" data-genre="Romance">Romance</button></li>
+                            <li><button class="genre-link" data-genre="Sci-Fi">Sci-Fi</button></li>
+                            <li><button class="genre-link" data-genre="Slice of Life">Slice of Life</button></li>
+                            <li><button class="genre-link" data-genre="Sports">Sports</button></li>
+                            <li><button class="genre-link" data-genre="Supernatural">Supernatural</button></li>
+                            <li><button class="genre-link" data-genre="Thriller">Thriller</button></li>
+                        </ul>
+                    </li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                            Types <i class="fas fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><button type="button" class="types-link" data-type="TV">TV Series</button></li>
+                            <li><button type="button" class="types-link" data-type="MOVIE">Movies</button></li>
+                            <li><button type="button" class="types-link" data-type="OVA">OVAs</button></li>
+                            <li><button type="button" class="types-link" data-type="ONA">ONAs</button></li>
+                            <li><button type="button" class="types-link" data-type="SPECIAL">Specials</button></li>
+                            <li><button type="button" class="types-link" data-type="MUSIC">Music</button></li>
+                        </ul>
+                    </li>
+                    <li><a href="history.html"><i class="fas fa-history"></i> History</a></li>
+                    <li><a href="my-list.html"><i class="fas fa-list"></i> My List</a></li>
+                    <li><a href="updates.html">Updated</a></li>
+                    <li><a href="">Feedback</a></li>
+                </span>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-homepage-content" style="padding: 20px;">
+        <div class="all-anime-layout">
+            <div class="all-anime-main">
+                <h2 class="responsive-index-title"><i class="fas fa-th-list"></i> All Anime</h2>
+
+                <div class="filter-bar">
+                    <select id="filter-year">
+                        <option value="">Year</option>
+                        <option value="2026">2026</option>
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2010s">2010s</option>
+                        <option value="2000s">2000s</option>
+                    </select>
+                    <select id="filter-season">
+                        <option value="">Season</option>
+                        <option value="WINTER">Winter</option>
+                        <option value="SPRING">Spring</option>
+                        <option value="SUMMER">Summer</option>
+                        <option value="FALL">Fall</option>
+                    </select>
+                    <select id="filter-genre">
+                        <option value="">Genre</option>
+                        <option value="Action">Action</option>
+                        <option value="Adventure">Adventure</option>
+                        <option value="Comedy">Comedy</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Fantasy">Fantasy</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Sci-Fi">Sci-Fi</option>
+                        <option value="Supernatural">Supernatural</option>
+                    </select>
+                    <select id="filter-type">
+                        <option value="">Type</option>
+                        <option value="TV">TV Series</option>
+                        <option value="MOVIE">Movies</option>
+                        <option value="OVA">OVAs</option>
+                        <option value="ONA">ONAs</option>
+                        <option value="SPECIAL">Specials</option>
+                    </select>
+                    <select id="filter-status">
+                        <option value="">Status</option>
+                        <option value="FINISHED">Finished</option>
+                        <option value="RELEASING">Releasing</option>
+                        <option value="NOT_YET_RELEASED">Not Yet Released</option>
+                        <option value="CANCELLED">Cancelled</option>
+                    </select>
+                </div>
+
+                <div id="search-results-section" style="display: none;">
+                    <div id="search-container" class="anime-grid-container"></div>
+                </div>
+
+                <div id="all-anime-container" class="anime-grid-container"></div>
+
+                <div id="pagination-controls" class="unified-controls">
+                    <button id="prev-page">Previous</button>
+                    <span id="page-indicator">Page 1</span>
+                    <button id="next-page">Next</button>
+                </div>
+            </div>
+
+            <aside class="airing-schedule" id="airingSchedule">
+                <div class="airing-schedule-header">
+                    <h3><i class="fas fa-calendar-alt"></i> Airing Schedule</h3>
+                </div>
+                <div class="airing-schedule-body">
+                    <div id="airingScheduleList">
+                        <p class="schedule-loading">Loading schedule...</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="site-bottom-button.js"></script>
+</body>
+</html>

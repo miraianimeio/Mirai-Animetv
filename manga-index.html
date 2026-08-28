@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Manga - Mirai</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="apple-touch-icon" href="./favicon-180.png">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./stylesheet.css">
+    <link rel="stylesheet" href="./manga.css">
+    <link rel="stylesheet" href="./site-bottom-button.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+</head>
+<body>
+
+    <header>
+        <nav>
+           <ul class='nav-bar'>
+                <input type='checkbox' id='check' />
+                <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+                <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+
+                <li class='logo'>
+                    <a href='home.html'><img src='logo.png' alt="Logo" /></a>
+                </li>
+
+                <li class="nav-search-item">
+                    <div class="search-wrap">
+                        <span class="search-icon" id="mangaSearchBtn" style="cursor: pointer;"><i class="fas fa-search"></i></span>
+                        <input type="text" id="mangaSearchBox" placeholder="Search manga...">
+                        <kbd class="search-shortcut">Ctrl Y</kbd>
+                    </div>
+                </li>
+
+                <span class="menu">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="all-anime-index.html">Anime</a></li>
+                    <li><a href="manga-index.html" class="active-nav-link">Manga</a></li>
+                    <li><a href="history.html"><i class="fas fa-history"></i> History</a></li>
+                    <li><a href="my-list.html"><i class="fas fa-list"></i> My List</a></li>
+                    <li><a href="">Feedback</a></li>
+                </span>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="manga-page-content" style="padding: 20px;">
+        <div class="all-anime-layout">
+            <div class="all-anime-main">
+                <h2 class="responsive-index-title"><i class="fas fa-book-open"></i> All Manga</h2>
+
+                <div class="filter-bar">
+                    <select id="filter-status">
+                        <option value="">Status</option>
+                        <option value="ongoing">Ongoing</option>
+                        <option value="completed">Completed</option>
+                        <option value="hiatus">Hiatus</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                    <select id="filter-content-rating">
+                        <option value="">Content Rating</option>
+                        <option value="safe">Safe</option>
+                        <option value="suggestive">Suggestive</option>
+                    </select>
+                </div>
+
+                <div id="manga-search-section" style="display: none;">
+                    <h3 class="manga-section-title">Search Results</h3>
+                    <div id="manga-search-container" class="anime-grid-container"></div>
+                </div>
+
+                <div id="manga-browse-section">
+                    <h3 class="manga-section-title">Recently Updated</h3>
+                    <div id="manga-latest-container" class="anime-grid-container"></div>
+
+                    <h3 class="manga-section-title">Popular</h3>
+                    <div id="manga-popular-container" class="anime-grid-container"></div>
+
+                    <div id="manga-pagination-controls" class="unified-controls">
+                        <button id="manga-prev-page">Previous</button>
+                        <span id="manga-page-indicator">Page 1</span>
+                        <button id="manga-next-page">Next</button>
+                    </div>
+                </div>
+
+                <p class="mangadex-attribution">
+                    Manga data and chapter images provided by
+                    <a href="https://mangadex.org" target="_blank" rel="noopener">MangaDex</a>.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    
+    <script src="manga.js"></script>
+    <script src="site-bottom-button.js"></script>
+</body>
+</html>
+

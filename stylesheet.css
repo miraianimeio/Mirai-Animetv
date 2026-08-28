@@ -1,0 +1,849 @@
+body {
+  background-color: #121f26;
+}
+p {
+  color: white;
+  text-align: center;
+}
+
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.follow-us-row {
+    display: flex;
+    gap: 12px;
+    width: min(90%, 700px);
+    margin: 4px auto 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.follow-us-card {
+    flex: 1 1 200px;
+    background-color: #23495f;
+    padding: 20px 22px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-height: 100px;
+    justify-content: center;
+}
+
+.follow-us-label {
+    color: #8bdcff;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.follow-us-card a {
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.follow-us-card a:hover {
+    color: #4ed9ff;
+}
+
+@media (max-width: 600px) {
+    .follow-us-row {
+        flex-direction: row;
+        gap: 8px;
+        width: 100%;
+        padding: 0 12px;
+    }
+
+    .follow-us-card {
+        flex: 1 1 0;
+        min-height: 70px;
+        padding: 10px 8px;
+    }
+
+    .follow-us-label {
+        font-size: 9px;
+    }
+
+    .follow-us-card a i {
+        font-size: 16px !important;
+    }
+}
+
+
+@media (max-width: 768px) {
+  #anime-list-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 480px) {
+  #anime-list-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+
+
+
+
+
+
+.showcase-banner {
+    width: 100%;
+    max-width: 850px;
+    margin: 20px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 25px;
+    box-sizing: border-box;
+    text-align: left;
+    position: relative;
+    
+    
+    background-color: #14222b;
+    background-size: cover;
+    background-position: center top;
+}
+
+
+.meta-grid {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.poster-box {
+    width: 160px;
+    height: 235px;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.poster-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.details-box {
+    flex: 1;
+    min-width: 250px;
+    font-family: sans-serif;
+}
+
+.details-box h2 { 
+    margin: 0 0 15px 0; 
+    color: #ffffff; 
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.meta-badge {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    font-size: 13px;
+    padding: 5px 14px;
+    border-radius: 4px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.meta-badge.rating-star {
+    color: #ffc107;
+    background-color: rgba(255, 193, 7, 0.12);
+    border-color: rgba(255, 193, 7, 0.2);
+}
+
+.genre-badge {
+    background-color: rgba(229, 9, 20, 0.15);
+    border: 1px solid rgba(229, 9, 20, 0.3);
+    color: #ff5263;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.genre-action        { background-color: rgba(229, 9, 20, 0.15);  border-color: rgba(229, 9, 20, 0.35);  color: #ff5263; }
+.genre-adventure      { background-color: rgba(255, 169, 77, 0.15); border-color: rgba(255, 169, 77, 0.35); color: #ffa94d; }
+.genre-comedy         { background-color: rgba(255, 224, 102, 0.15); border-color: rgba(255, 224, 102, 0.35); color: #ffe066; }
+.genre-drama          { background-color: rgba(167, 139, 250, 0.15); border-color: rgba(167, 139, 250, 0.35); color: #a78bfa; }
+.genre-ecchi          { background-color: rgba(255, 111, 174, 0.15); border-color: rgba(255, 111, 174, 0.35); color: #ff6fae; }
+.genre-fantasy        { background-color: rgba(45, 212, 191, 0.15); border-color: rgba(45, 212, 191, 0.35); color: #2dd4bf; }
+.genre-horror         { background-color: rgba(185, 28, 28, 0.18); border-color: rgba(185, 28, 28, 0.4); color: #f87171; }
+.genre-mahou-shoujo   { background-color: rgba(244, 114, 182, 0.15); border-color: rgba(244, 114, 182, 0.35); color: #f472b6; }
+.genre-mecha          { background-color: rgba(96, 165, 250, 0.15); border-color: rgba(96, 165, 250, 0.35); color: #60a5fa; }
+.genre-music          { background-color: rgba(232, 121, 249, 0.15); border-color: rgba(232, 121, 249, 0.35); color: #e879f9; }
+.genre-mystery        { background-color: rgba(139, 92, 246, 0.15); border-color: rgba(139, 92, 246, 0.35); color: #8b5cf6; }
+.genre-psychological  { background-color: rgba(99, 102, 241, 0.15); border-color: rgba(99, 102, 241, 0.35); color: #818cf8; }
+.genre-romance        { background-color: rgba(251, 113, 133, 0.15); border-color: rgba(251, 113, 133, 0.35); color: #fb7185; }
+.genre-sci-fi         { background-color: rgba(34, 211, 238, 0.15); border-color: rgba(34, 211, 238, 0.35); color: #22d3ee; }
+.genre-slice-of-life  { background-color: rgba(163, 230, 53, 0.15); border-color: rgba(163, 230, 53, 0.35); color: #a3e635; }
+.genre-sports         { background-color: rgba(251, 146, 60, 0.15); border-color: rgba(251, 146, 60, 0.35); color: #fb923c; }
+.genre-supernatural   { background-color: rgba(129, 140, 248, 0.15); border-color: rgba(129, 140, 248, 0.35); color: #818cf8; }
+.genre-thriller       { background-color: rgba(220, 38, 38, 0.18); border-color: rgba(220, 38, 38, 0.4); color: #ef4444; }
+
+.synopsis-area {
+    margin-top: 20px;
+    font-family: sans-serif;
+}
+
+.synopsis-area h4 {
+    display: none; 
+}
+
+.synopsis-area p { 
+    color: rgba(255, 255, 255, 0.75); 
+    font-size: 14px; 
+    line-height: 1.6; 
+    text-align: left; 
+    margin: 0 0 25px 0; 
+    max-width: 720px;
+}
+
+.play-now-container {
+    margin-top: 25px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.play-now-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #00a0e9;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 16px; 
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 14px 50px; 
+    border-radius: 6px;
+    box-shadow: 0 4px 14px rgba(0, 160, 233, 0.4);
+    transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+
+.play-now-btn:hover {
+    background-color: #008ecf;
+    box-shadow: 0 6px 18px rgba(0, 160, 233, 0.6);
+}
+
+.play-now-btn:active {
+    transform: scale(0.97);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+        body {
+            background-color: #121f26;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        
+        .section-title {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 20px 20px 5px 20px;
+            margin: 0;
+        }
+
+        
+        .anime-grid-container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 14px;
+            padding: 10px 20px 20px 20px;
+            background-color: #121f26;
+        }
+
+        .carousel-viewport {
+            overflow: hidden;
+            padding: 8px 0 20px 20px;
+            position: relative;
+          cursor: grab;
+          touch-action: pan-y;
+          user-select: none;
+        }
+
+        .carousel-viewport.is-dragging {
+          cursor: grabbing;
+        }
+
+        .anime-carousel-track {
+            display: flex;
+            gap: 14px;
+            width: max-content;
+            animation: recommendedScroll 24s linear infinite;
+            animation-play-state: running;
+            will-change: transform;
+        }
+
+        .anime-carousel-track .anime-card {
+            width: 150px !important;
+            flex: 0 0 150px !important;
+        }
+
+        .anime-carousel-track.recommended-enter .anime-card {
+          animation: recommendationCardEnter 360ms ease-out both;
+        }
+
+        .anime-carousel-track.recommended-enter .anime-card:nth-child(n + 4) {
+          animation-delay: 40ms;
+        }
+
+        .anime-carousel-track.recommended-enter .anime-card:nth-child(n + 7) {
+          animation-delay: 80ms;
+        }
+
+        .low-end-device .anime-carousel-track.recommended-enter .anime-card {
+          animation: none;
+        }
+
+        @keyframes recommendationCardEnter {
+          from { opacity: 0; transform: translateY(14px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes recommendedScroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+          .anime-grid-container.page-transition-next .anime-card,
+          .anime-grid-container.page-transition-prev .anime-card {
+            animation: cardsPageEnter 320ms ease-out both;
+          }
+
+          .anime-grid-container.page-transition-prev .anime-card {
+            animation-name: cardsPageEnterReverse;
+          }
+
+          .anime-grid-container.page-transition-next .anime-card:nth-child(n + 2),
+          .anime-grid-container.page-transition-prev .anime-card:nth-child(n + 2) {
+            animation-delay: 25ms;
+          }
+
+          .anime-grid-container.page-transition-next .anime-card:nth-child(n + 4),
+          .anime-grid-container.page-transition-prev .anime-card:nth-child(n + 4) {
+            animation-delay: 50ms;
+          }
+
+          .anime-grid-container.page-transition-next .anime-card:nth-child(n + 7),
+          .anime-grid-container.page-transition-prev .anime-card:nth-child(n + 7) {
+            animation-delay: 75ms;
+          }
+
+          @keyframes cardsPageEnter {
+            from { opacity: 0; transform: translateX(18px); }
+            to { opacity: 1; transform: translateX(0); }
+          }
+
+          @keyframes cardsPageEnterReverse {
+            from { opacity: 0; transform: translateX(-18px); }
+            to { opacity: 1; transform: translateX(0); }
+          }
+
+          @media (prefers-reduced-motion: reduce) {
+            .anime-carousel-track {
+              animation: none;
+              will-change: auto;
+            }
+
+            .anime-carousel-track.recommended-enter .anime-card {
+              animation: none;
+            }
+
+            .anime-grid-container.page-transition-next .anime-card,
+            .anime-grid-container.page-transition-prev .anime-card {
+              animation: none;
+            }
+          }
+
+        
+        @media (max-width: 768px) {
+            .anime-grid-container {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+                padding: 10px;
+            }
+            .section-title {
+                padding: 15px 10px 5px 10px;
+                font-size: 18px;
+            }
+            .carousel-viewport {
+                padding-left: 10px;
+            }
+            .anime-carousel-track {
+                gap: 10px;
+            }
+            .anime-carousel-track .anime-card {
+                width: 130px !important;
+                flex-basis: 130px !important;
+            }
+        }
+        @media (max-width: 480px) {
+            .anime-grid-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 6px;
+            }
+        }
+
+
+
+
+.slider {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.slides {
+  width: 300%;
+  height: 100%;
+  display: flex;
+}
+
+.slides input {
+  display: none;
+}
+
+.slide {
+  width: 100%;
+  transition: 0.6s;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.navigation-manual {
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.manual-btn {
+  border: 2px solid #fff;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 0 5px;
+}
+
+.manual-btn:hover {
+  background: #fff;
+}
+
+    .navigation-auto {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  bottom: 10px;
+}
+
+.navigation-auto div {
+  border: 2px solid #fff;
+  padding: 5px;
+  border-radius: 50%;
+  transition: 0.3s;
+  margin: 0 5px;
+}
+
+
+#radio1:checked ~ .first {
+  margin-left: 0;
+}
+#radio2:checked ~ .first {
+  margin-left: -100%;
+}
+#radio3:checked ~ .first {
+  margin-left: -200%;
+}
+
+
+.hero-container {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;   
+  min-height: 200px;      
+  margin: 20px auto;
+  overflow: hidden;
+  background-color: #000;
+  border-radius: 12px;
+  animation: heroGlowShift 12s ease-in-out infinite;
+}
+
+
+
+
+@media (min-width: 1024px) {
+  .hero-container {
+    height: 60vh;         
+    max-height: 600px;    
+  }
+}
+
+.hero-container video,
+.hero-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+
+
+
+.modern-footer {
+  background-color: #121f26; 
+  color: #7a7a7a;            
+  padding: 60px 4% 30px 4%;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+
+.footer-container {
+  border-top: 1px solid #ebe5e5; 
+  padding-top: 40px;             
+  margin-top: 0;
+  
+ 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+
+.brand-section {
+  flex: 1;
+  min-width: 280px;
+  max-width: 450px;
+  text-align: left; 
+}
+
+.footer-logo {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.footer-disclaimer {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+
+.footer-links-group {
+  display: flex;
+  flex-wrap: nowrap; 
+  flex: 1;
+  min-width: 280px;  
+  gap: 10px;
+}
+
+.footer-col {
+  width: 50%;        
+}
+
+.footer-col h3 {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 18px;
+}
+
+.footer-col ul li a {
+  color: #7a7a7a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #ffffff;
+}
+
+
+.version-tag {
+  background-color: #1e1f29;
+  color: #707dfd;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 20px;
+  margin-left: 6px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.footer-bottom {
+  border-top: 1px solid #ebe5e5;
+  margin-top: 60px;
+  padding-top: 25px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+
+
+.anime-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+.poster-container {
+  width: 100%;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 2 / 3;
+  background-color: #0b111e;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+}
+
+.poster-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.poster-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card-title a {
+  color: #f8fafc;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+
+
+@media (hover: hover) {
+  
+  .anime-card:hover .poster-container {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.6);
+  }
+  
+  
+  .anime-card:hover .poster-image {
+    transform: scale(1.06);
+  }
+
+  
+  .anime-card:hover .card-title a {
+    color: #3b82f6;
+  }
+}
+
+
+
+.anime-card:active .poster-container {
+  transform: scale(0.96);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+
+.anime-card:active .card-title a {
+  color: #3b82f6;
+  opacity: 0.9;
+}
+
+
+
+.format-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: #cbd5e1;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  pointer-events: none;
+}
+
+
+.info-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(11, 17, 30, 0.95) 0%, rgba(11, 17, 30, 0.6) 60%, rgba(11, 17, 30, 0) 100%);
+  padding: 20px 10px 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  pointer-events: none;
+}
+
+
+.badge-group {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.badge {
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 6px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge-sub { background-color: #3b82f6; }
+.badge-dub { background-color: #ef4444; }
+
+.ep-count {
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ep-count i {
+  font-size: 9px;
+}
+
+
+.card-title {
+  margin: 12px 0 0 0;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 36.4px;
+}

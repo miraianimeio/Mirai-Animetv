@@ -1,0 +1,57 @@
+.site-bottom-button {
+    position: fixed;
+    right: max(20px, env(safe-area-inset-right));
+    bottom: max(20px, env(safe-area-inset-bottom));
+    z-index: 1000002;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 15px;
+    border: 1px solid rgba(78, 217, 255, 0.5);
+    border-radius: 999px;
+    background: #181818;
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+    font: 600 13px/1.2 Poppins, sans-serif;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+
+.site-bottom-button.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.site-bottom-button:hover,
+.site-bottom-button:focus-visible {
+    background: #23495f;
+    border-color: #4ed9ff;
+    outline: none;
+}
+
+.site-bottom-button:focus-visible {
+    box-shadow: 0 0 0 3px rgba(78, 217, 255, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 480px) {
+    .site-bottom-button {
+        right: max(14px, env(safe-area-inset-right));
+        bottom: max(14px, env(safe-area-inset-bottom));
+        padding: 12px;
+        border-radius: 50%;
+    }
+
+    .site-bottom-button span {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-bottom-button {
+        transition: none;
+    }
+}

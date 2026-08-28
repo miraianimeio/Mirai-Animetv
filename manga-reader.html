@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Reading - Mirai</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="apple-touch-icon" href="./favicon-180.png">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./stylesheet.css">
+    <link rel="stylesheet" href="./manga.css">
+    <link rel="stylesheet" href="./site-bottom-button.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+</head>
+<body>
+
+    <header>
+        <nav>
+           <ul class='nav-bar'>
+                <input type='checkbox' id='check' />
+                <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+                <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+
+                <li class='logo'>
+                    <a href='home.html'><img src='logo.png' alt="Logo" /></a>
+                </li>
+
+                <span class="menu">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="manga-index.html">Manga</a></li>
+                    <li id="back-to-manga-li"><a id="back-to-manga" href="manga-index.html">&laquo; Back to details</a></li>
+                </span>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="reader-content" style="padding: 20px;">
+        <div class="reader-toolbar">
+            <button id="prev-chapter-btn" class="reader-nav-btn"><i class="fas fa-chevron-left"></i> Prev</button>
+            <div class="reader-chapter-select-wrap">
+                <span id="reader-chapter-label">Chapter</span>
+                <select id="chapter-jump"></select>
+            </div>
+            <button id="next-chapter-btn" class="reader-nav-btn">Next <i class="fas fa-chevron-right"></i></button>
+            <label class="reader-quality-toggle">
+                <input type="checkbox" id="data-saver-toggle"> Data saver
+            </label>
+        </div>
+
+        <p id="scanlation-credit" class="scanlation-credit"></p>
+
+        <div id="reader-pages" class="reader-pages">
+            <p class="manga-loading">Loading pages...</p>
+        </div>
+
+        <div class="reader-toolbar reader-toolbar-bottom">
+            <button id="prev-chapter-btn-bottom" class="reader-nav-btn"><i class="fas fa-chevron-left"></i> Prev</button>
+            <button id="next-chapter-btn-bottom" class="reader-nav-btn">Next <i class="fas fa-chevron-right"></i></button>
+        </div>
+
+        <p class="mangadex-attribution">
+            Pages served live from MangaDex@Home. Provided by
+            <a href="https://mangadex.org" target="_blank" rel="noopener">MangaDex</a>.
+        </p>
+    </main>
+
+    <script src="mangadex-api.js"></script>
+    <script src="manga-reader.js"></script>
+    <script src="site-bottom-button.js"></script>
+</body>
+</html>
+

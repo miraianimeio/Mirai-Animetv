@@ -1,0 +1,384 @@
+.history-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 4px;
+}
+
+.history-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.download-history-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(78, 217, 255, 0.1);
+    color: #4ed9ff;
+    border: 1px solid rgba(78, 217, 255, 0.2);
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.download-history-btn:hover {
+    background: rgba(78, 217, 255, 0.15);
+    border-color: rgba(78, 217, 255, 0.3);
+}
+
+.clear-history-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #23495f;
+    color: #ffffff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.clear-history-btn:hover {
+    background-color: #ef4444;
+    color: #ffffff;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 640px;
+    margin-top: 16px;
+}
+
+.history-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background-color: #17232d;
+    border: 1px solid #263443;
+    border-radius: 10px;
+    padding: 10px;
+    transition: border-color 0.2s ease, transform 0.15s ease;
+}
+
+.history-row:hover {
+    border-color: #4ed9ff;
+    transform: translateY(-1px);
+}
+
+.history-row-thumb {
+    position: relative;
+    flex: 0 0 72px;
+    width: 72px;
+    height: 96px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: block;
+    background-color: #0b111e;
+}
+
+.history-row-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.history-row-play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(11, 17, 30, 0.45);
+    color: #ffffff;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.history-row-thumb:hover .history-row-play {
+    opacity: 1;
+}
+
+.history-row-info {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.history-row-title {
+    color: #f8fafc;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 24px;
+}
+
+.history-row-title:hover {
+    color: #4ed9ff;
+}
+
+.history-row-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.history-row-episode {
+    color: #8bdcff;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.history-row-time {
+    color: #64748b;
+    font-size: 11px;
+    flex-shrink: 0;
+}
+
+.history-row-progress {
+    width: 100%;
+    height: 4px;
+    background-color: #263443;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.history-row-progress-fill {
+    height: 100%;
+    background-color: #4ed9ff;
+    border-radius: 4px;
+}
+
+.history-row-remove {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: #64748b;
+    border: none;
+    border-radius: 50%;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.history-row-remove:hover {
+    background-color: #ef4444;
+    color: #ffffff;
+}
+
+.history-empty-state {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    padding: 60px 20px;
+    color: #94a3b8;
+}
+
+.history-empty-state i {
+    font-size: 40px;
+    color: #334155;
+}
+
+.history-empty-state p {
+    font-size: 15px;
+}
+
+.history-browse-btn {
+    display: inline-block;
+    margin-top: 6px;
+    background-color: #23495f;
+    color: #ffffff;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.history-browse-btn:hover {
+    background-color: #4ed9ff;
+    color: #0b111e;
+}
+
+.cw-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+
+.cw-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.cw-scroll-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #263443;
+    background-color: #17232d;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.cw-scroll-btn:hover {
+    background-color: #23495f;
+    border-color: #4ed9ff;
+}
+
+.cw-viewport {
+    padding: 8px 0 20px 20px;
+}
+
+.cw-track {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x proximity;
+    padding-bottom: 4px;
+}
+
+.cw-track::-webkit-scrollbar {
+    height: 6px;
+}
+
+.cw-track::-webkit-scrollbar-thumb {
+    background-color: #263443;
+    border-radius: 4px;
+}
+
+.cw-track .cw-card {
+    width: 150px !important;
+    flex: 0 0 150px !important;
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.cw-play-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(11, 17, 30, 0.35);
+    color: #ffffff;
+    font-size: 22px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.cw-card .poster-container:hover .cw-play-overlay {
+    opacity: 1;
+}
+
+.cw-remove-btn {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(11, 17, 30, 0.65);
+    color: #ffffff;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease, background-color 0.2s ease;
+    z-index: 2;
+}
+
+.cw-card .poster-container:hover .cw-remove-btn {
+    opacity: 1;
+}
+
+.cw-remove-btn:hover {
+    background-color: #ef4444;
+}
+
+.cw-progress-track {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4px;
+    background-color: rgba(11, 17, 30, 0.6);
+}
+
+.cw-progress-fill {
+    height: 100%;
+    background-color: #4ed9ff;
+}
+
+@media (max-width: 768px) {
+    .cw-viewport {
+        padding-left: 10px;
+    }
+    .cw-track .cw-card {
+        width: 130px !important;
+        flex-basis: 130px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .history-header-row {
+        flex-direction: row;
+        align-items: center;
+    }
+    .download-history-btn,
+    .clear-history-btn {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+    .history-row-thumb {
+        flex-basis: 56px;
+        width: 56px;
+        height: 76px;
+    }
+    .history-row-title {
+        font-size: 13px;
+    }
+}
+

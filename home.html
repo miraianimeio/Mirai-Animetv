@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Mirai - Watch Anime Online, Free Anime Streaming</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="apple-touch-icon" href="./favicon-180.png">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./stylesheet.css">
+    <link rel="stylesheet" href="./top-anime.css">
+    <link rel="stylesheet" href="./airing-schedule.css">
+    <link rel="stylesheet" href="./history.css">
+    <link rel="stylesheet" href="./site-bottom-button.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" /></head>
+<body>
+    <header>
+    <nav>
+           <ul class='nav-bar'>
+                <input type='checkbox' id='check' />
+                <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+                <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+
+                <li class='logo'>
+                    <a href='home.html'><img src='logo.png' alt="Logo"/></a>
+                </li>
+
+                <li class="nav-search-item">
+                    <div class="search-wrap">
+                        <span class="search-icon" id="animeSearchBtn" style="cursor: pointer;"><i class="fas fa-search"></i></span>
+                        <input type="text" id="animeSearchBox" placeholder="Search anime...">
+                        <kbd class="search-shortcut">Ctrl Y</kbd>
+                    </div>
+                </li>
+
+                <span class="menu">
+                    <li>
+                     <a href="home.html">Home</a></li>
+                     <li><a href="manga-index.html">Manga</a></li>
+                    <li class="nav-dropdown">
+                                  <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                                 Genre <i class="fas fa-angle-down"></i>
+                           </a>
+                          <ul class="dropdown-menu">
+                            <li><button class="genre-link" data-genre="Action">Action</button></li>
+                            <li><button class="genre-link" data-genre="Adventure">Adventure</button></li>
+                            <li><button class="genre-link" data-genre="Comedy">Comedy</button></li>
+                            <li><button class="genre-link" data-genre="Drama">Drama</button></li>
+                            <li><button class="genre-link" data-genre="Ecchi">Ecchi</button></li>
+                            <li><button class="genre-link" data-genre="Fantasy">Fantasy</button></li>
+                            <li><button class="genre-link" data-genre="Horror">Horror</button></li>
+                            <li><button class="genre-link" data-genre="Mahou Shoujo">Magical Girl</button></li>
+                            <li><button class="genre-link" data-genre="Mecha">Mecha</button></li>
+                            <li><button class="genre-link" data-genre="Music">Music</button></li>
+                            <li><button class="genre-link" data-genre="Mystery">Mystery</button></li>
+                            <li><button class="genre-link" data-genre="Psychological">Psychological</button></li>
+                            <li><button class="genre-link" data-genre="Romance">Romance</button></li>
+                            <li><button class="genre-link" data-genre="Sci-Fi">Sci-Fi</button></li>
+                            <li><button class="genre-link" data-genre="Slice of Life">Slice of Life</button></li>
+                            <li><button class="genre-link" data-genre="Sports">Sports</button></li>
+                            <li><button class="genre-link" data-genre="Supernatural">Supernatural</button></li>
+                            <li><button class="genre-link" data-genre="Thriller">Thriller</button></li>
+                      </ul>
+                    </li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                            Types <i class="fas fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><button type="button" class="types-link" data-type="TV">TV Series</button></li>
+                            <li><button type="button" class="types-link" data-type="MOVIE">Movies</button></li>
+                            <li><button type="button" class="types-link" data-type="OVA">OVAs</button></li>
+                            <li><button type="button" class="types-link" data-type="ONA">ONAs</button></li>
+                            <li><button type="button" class="types-link" data-type="SPECIAL">Specials</button></li>
+                            <li><button type="button" class="types-link" data-type="MUSIC">Music</button></li>
+                        </ul>
+                    </li>
+                    <li><a href="history.html"><i class="fas fa-history"></i> History</a></li>
+                    <li><a href="my-list.html"><i class="fas fa-list"></i> My List</a></li>
+                    <li><a href="updates.html">Updated</a></li>
+                </span>
+
+                <li class="nav-user">
+                    <button class="user-logo" id="profileBtn" aria-label="User profile">
+                        <i class="fas fa-user-circle" id="navUserIcon"></i>
+                        <img id="navUserAvatar" src="" alt="User" class="nav-user-avatar" style="display:none;">
+                    </button>
+                    <div class="profile-popup" id="profilePopup">
+                        <div class="profile-popup-header">
+                            <div class="profile-popup-avatar">
+                                <img id="popupAvatarImg" src="" alt="Avatar" class="popup-avatar-img" style="display:none;">
+                                <div id="popupAvatarPlaceholder" class="popup-avatar-placeholder">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="profile-popup-avatar-overlay" id="avatarUploadOverlay">
+                                    <i class="fas fa-camera"></i>
+                                </div>
+                                <input type="file" id="avatarUploadInput" accept="image/*" hidden>
+                            </div>
+                            <div class="profile-popup-info">
+                                <input type="text" class="profile-popup-username" id="popupUsername" value="Guest" maxlength="32">
+                                <div class="profile-popup-meta">
+                                    <span class="profile-popup-status"><span class="status-dot"></span> Online</span>
+                                    <span class="profile-popup-email" id="popupEmailDisplay">guest@mirai.com</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile-popup-body">
+                            <div class="profile-popup-field">
+                                <label>Display Name</label>
+                                <div class="profile-input-row">
+                                    <input type="text" id="displayName" placeholder="Enter display name" maxlength="32">
+                                    <button class="profile-save-btn" id="saveDisplayName">Save</button>
+                                </div>
+                            </div>
+                            <div class="profile-popup-field">
+                                <label>Bio</label>
+                                <textarea id="userBio" placeholder="Tell us about yourself..." maxlength="190" rows="2"></textarea>
+                            </div>
+                            <div class="profile-popup-field">
+                                <label>Joined</label>
+                                <span class="profile-joined-date" id="joinedDate">-</span>
+                            </div>
+                            <div class="profile-popup-actions">
+                                <button class="profile-action-btn" id="editProfileBtn"><i class="fas fa-pen"></i> Edit</button>
+                                <button class="profile-action-btn" id="changeStatusBtn"><i class="fas fa-circle"></i> Status</button>
+                            </div>
+                            <button class="profile-logout-btn" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Log Out</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+         </nav>
+    </header>
+
+    <marquee style="color: #4ed9ff; font-weight: bold; background-color: #121f26; padding: 8px 0; font-size: 14px; border-radius: 4px;">
+        Welcome to Mirai-Anime! Stream your favorite series here at Miraianime
+    </marquee>
+
+<center>
+<p><a href="https://share.google/QxGYC4pNsS1mOfUmy">This is your devs</a></p>
+</center>
+<center>
+<div class="hero-container">
+  <img id="hero-image" src="Irohaa.jpg" alt="Hero Image" class="fade-in">
+    <video id="hero-video" muted playsinline preload="none" class="fade-out"></video>
+</div>
+<script>
+  (function () {
+        var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+        var lowEndDevice = (navigator.deviceMemory && navigator.deviceMemory <= 2) ||
+            (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) ||
+            connection?.saveData;
+        document.documentElement.classList.toggle('low-end-device', Boolean(lowEndDevice));
+
+        if (!sessionStorage.getItem('mirai_hero_played') && !lowEndDevice) {
+      var v = document.getElementById('hero-video');
+      var source = document.createElement('source');
+      source.src = 'irohamirai.mp4';
+      source.type = 'video/mp4';
+      v.appendChild(source);
+      v.load();
+    }
+  })();
+</script>
+
+<div class="follow-us-row">
+    <div class="follow-us-card">
+        <span class="follow-us-label">Join us</span>
+        <a href="https://discord.gg/kFVN9TaTp" target="_blank"><i class="fab fa-discord fa-2x"></i></a>
+    </div>
+    <div class="follow-us-card">
+        <span class="follow-us-label">Follow us</span>
+        <a href="https://www.reddit.com/user/Mirai-Animedev/?utm_source=share&utm_medium=mweb3x&utm_name=mweb3xcss&utm_term=1&utm_content=share_button" target="_blank"><i class="fab fa-reddit fa-2x"></i></a>
+    </div>
+    <div class="follow-us-card">
+        <span class="follow-us-label">Follow us</span>
+        <a href="https://www.tiktok.com/@miraianimeio?is_from_webapp=1&sender_device=pc" target="_blank"><i class="fab fa-tiktok fa-2x"></i></a>
+    </div>
+</div>
+</center>
+<br>
+<br>
+
+    <div id="search-results-section" style="display: none;">
+        <h3 class="section-title" id="search-title">Search Results</h3>
+        <div id="search-container" class="anime-grid-container"></div>
+    </div>
+
+    <div id="main-homepage-content">
+        <div class="home-layout">
+            <div class="home-main">
+                <div id="continue-watching-section" style="display: none;">
+                    <div class="cw-title-row">
+                        <h3 class="section-title"><i class="fas fa-clock-rotate-left"></i> Continue Watching</h3>
+                        <div class="cw-controls">
+                            <button id="cw-prev-btn" type="button" class="cw-scroll-btn" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
+                            <button id="cw-next-btn" type="button" class="cw-scroll-btn" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="cw-viewport">
+                        <div id="continue-watching-container" class="cw-track"></div>
+                    </div>
+                </div>
+
+                <h3 class="section-title"><i class="fas fa-star"></i> Recommended For You</h3>
+                <div class="carousel-viewport">
+                    <div id="recommended-container" class="anime-carousel-track"></div>
+                </div>
+
+                <h3 class="section-title"><i class="fas fa-fire"></i> Trending Now</h3>
+                <div class="trending-controls">
+                    <button id="trending-prev-btn" type="button" disabled>Previous</button>
+                    <span id="trending-page-indicator" style="color: #ffffff; font-size: 14px;">Page 1</span>
+                    <button id="trending-next-btn" type="button" disabled>Next</button>
+                </div>
+                <div id="trending-container" class="anime-grid-container"></div>
+            </div>
+
+            <aside class="home-sidebar">
+                <div class="top-anime" id="topAnime">
+                    <div class="top-anime-header">
+                        <h3><i class="fas fa-trophy"></i> Top Anime</h3>
+                    </div>
+                    <div class="top-anime-tabs">
+                        <button type="button" class="top-anime-tab active" data-period="day">Day</button>
+                        <button type="button" class="top-anime-tab" data-period="week">Week</button>
+                        <button type="button" class="top-anime-tab" data-period="month">Month</button>
+                    </div>
+                    <div class="top-anime-body">
+                        <div id="topAnimeList">
+                            <p class="top-anime-loading">Loading ranking...</p>
+                        </div>
+                    </div>
+                </div>
+                <section class="airing-schedule home-airing-schedule" id="homeAiringSchedule">
+                    <div class="airing-schedule-header">
+                        <h3><i class="fas fa-calendar-alt"></i> Airing Schedule</h3>
+                    </div>
+                    <div class="airing-schedule-body" id="homeAiringScheduleList">
+                        <p class="schedule-loading">Loading schedule...</p>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </div>
+
+     <footer class="modern-footer">
+  <div class="footer-container">
+    <div class="brand-section">
+      <h2 class="footer-logo">MIRAIANIME</h2>
+      <p class="footer-disclaimer">
+        This website does not retain any files on its server.<br>
+        Rather, it solely provides links to media content hosted by third-party services.
+      </p>
+    </div>
+
+    <div class="footer-links-group">
+
+      <div class="footer-col">
+        <h3>EXPLORE</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="history.html">Continue Watching</a></li>
+          <li><a href="my-list.html">My Anime-List</a></li>
+          <li><a href="updates.html">Changelog</a></li>
+          <li><a href="all-anime-index.html">Search</a></li>
+          <li><a href="manga-index.html">Manga</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>SOCIALS</h3>
+        <ul>
+          <li><a href="https://www.tiktok.com/@miraianimeio?is_from_webapp=1&sender_device=pc">Tiktok</a></li>
+          <li><a href="https://discord.gg/sxFWDnvRP">Discord</a></li>
+          <li><a href="https://www.reddit.com/user/Mirai-Animedev/?utm_source=share&utm_medium=mweb3x&utm_name=mweb3xcss&utm_term=1&utm_content=share_button">Reddit</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <h2>&copy; 2026 miraianimetv.to &mdash; All rights reserved.</h2>
+  </div>
+</footer>
+
+    <script src="history.js"></script>
+    <script src="script.js"></script>
+    <script src="site-bottom-button.js"></script>
+    <script>
+    (function () {
+        const profileBtn = document.getElementById('profileBtn');
+        const profilePopup = document.getElementById('profilePopup');
+        const avatarUploadInput = document.getElementById('avatarUploadInput');
+        const avatarUploadOverlay = document.getElementById('avatarUploadOverlay');
+        const popupAvatarImg = document.getElementById('popupAvatarImg');
+        const popupAvatarPlaceholder = document.getElementById('popupAvatarPlaceholder');
+        const navUserIcon = document.getElementById('navUserIcon');
+        const navUserAvatar = document.getElementById('navUserAvatar');
+        const popupUsername = document.getElementById('popupUsername');
+        const popupEmailDisplay = document.getElementById('popupEmailDisplay');
+        const displayNameInput = document.getElementById('displayName');
+        const userBio = document.getElementById('userBio');
+        const joinedDate = document.getElementById('joinedDate');
+        const saveDisplayName = document.getElementById('saveDisplayName');
+        const editProfileBtn = document.getElementById('editProfileBtn');
+        const changeStatusBtn = document.getElementById('changeStatusBtn');
+        const logoutBtn = document.getElementById('logoutBtn');
+
+        function getUsers() {
+            try { return JSON.parse(localStorage.getItem('mirai_users')) || []; }
+            catch { return []; }
+        }
+
+        function saveUsers(users) {
+            localStorage.setItem('mirai_users', JSON.stringify(users));
+        }
+
+        function getCurrentUser() {
+            const email = localStorage.getItem('mirai_current_user');
+            if (!email) return null;
+            return getUsers().find(u => u.email.toLowerCase() === email.toLowerCase()) || null;
+        }
+
+        function updateNavAvatar(src) {
+            if (src) {
+                navUserAvatar.src = src;
+                navUserAvatar.style.display = 'block';
+                navUserIcon.style.display = 'none';
+            } else {
+                navUserAvatar.style.display = 'none';
+                navUserIcon.style.display = 'inline-block';
+            }
+        }
+
+        function loadProfile() {
+            const user = getCurrentUser();
+
+            if (!user) {
+                popupUsername.value = 'Guest';
+                popupEmailDisplay.textContent = 'guest@mirai.com';
+                joinedDate.textContent = '-';
+                return;
+            }
+
+            if (user.avatar) {
+                popupAvatarImg.src = user.avatar;
+                popupAvatarImg.style.display = 'block';
+                popupAvatarPlaceholder.style.display = 'none';
+                updateNavAvatar(user.avatar);
+            } else {
+                popupAvatarImg.style.display = 'none';
+                popupAvatarPlaceholder.style.display = 'flex';
+                updateNavAvatar(null);
+            }
+
+            popupUsername.value = user.displayName || `${user.firstName} ${user.lastName}`;
+            displayNameInput.value = user.displayName || '';
+            userBio.value = user.bio || '';
+            popupEmailDisplay.textContent = user.email;
+
+            if (user.joined) {
+                const date = new Date(user.joined);
+                joinedDate.textContent = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            } else {
+                joinedDate.textContent = '-';
+            }
+        }
+
+        function saveProfile() {
+            const user = getCurrentUser();
+            if (!user) return;
+
+            const users = getUsers();
+            const index = users.findIndex(u => u.email.toLowerCase() === user.email.toLowerCase());
+
+            if (index === -1) return;
+
+            users[index] = {
+                ...users[index],
+                avatar: popupAvatarImg.style.display !== 'none' ? popupAvatarImg.src : '',
+                displayName: popupUsername.value || displayNameInput.value,
+                bio: userBio.value
+            };
+
+            saveUsers(users);
+        }
+
+        profileBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            profilePopup.classList.toggle('active');
+        });
+
+        document.addEventListener('click', function (e) {
+            if (profilePopup.classList.contains('active') && !profilePopup.contains(e.target) && e.target !== profileBtn) {
+                profilePopup.classList.remove('active');
+            }
+        });
+
+        profilePopup.addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+
+        avatarUploadOverlay.addEventListener('click', function () {
+            avatarUploadInput.click();
+        });
+
+        avatarUploadInput.addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (ev) {
+                    popupAvatarImg.src = ev.target.result;
+                    popupAvatarImg.style.display = 'block';
+                    popupAvatarPlaceholder.style.display = 'none';
+                    updateNavAvatar(ev.target.result);
+                    saveProfile();
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        popupUsername.addEventListener('change', saveProfile);
+        userBio.addEventListener('change', saveProfile);
+
+        saveDisplayName.addEventListener('click', function () {
+            saveProfile();
+            this.textContent = 'Saved!';
+            setTimeout(() => { this.textContent = 'Save'; }, 1500);
+        });
+
+        editProfileBtn.addEventListener('click', function () {
+            popupUsername.focus();
+            popupUsername.select();
+        });
+
+        const statuses = [
+            { label: 'Online', color: '#22c55e' },
+            { label: 'Idle', color: '#f59e0b' },
+            { label: 'Do Not Disturb', color: '#ef4444' },
+            { label: 'Invisible', color: '#6b7280' }
+        ];
+        let statusIndex = 0;
+
+        changeStatusBtn.addEventListener('click', function () {
+            statusIndex = (statusIndex + 1) % statuses.length;
+            const status = statuses[statusIndex];
+            const statusEl = document.querySelector('.profile-popup-status');
+            statusEl.innerHTML = `<span class="status-dot" style="background:${status.color}"></span> ${status.label}`;
+        });
+
+        logoutBtn.addEventListener('click', function () {
+            localStorage.removeItem('mirai_current_user');
+            popupUsername.value = 'Guest';
+            displayNameInput.value = '';
+            userBio.value = '';
+            popupEmailDisplay.textContent = 'guest@mirai.com';
+            popupAvatarImg.style.display = 'none';
+            popupAvatarPlaceholder.style.display = 'flex';
+            updateNavAvatar(null);
+            joinedDate.textContent = '-';
+            profilePopup.classList.remove('active');
+            window.location.href = 'index.html';
+        });
+
+        loadProfile();
+    })();
+    </script>
+</body>
+</html>

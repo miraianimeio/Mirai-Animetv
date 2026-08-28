@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Manga - Mirai</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="apple-touch-icon" href="./favicon-180.png">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./stylesheet.css">
+    <link rel="stylesheet" href="./manga.css">
+    <link rel="stylesheet" href="./site-bottom-button.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+</head>
+<body>
+
+    <header>
+        <nav>
+           <ul class='nav-bar'>
+                <input type='checkbox' id='check' />
+                <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+                <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+
+                <li class='logo'>
+                    <a href='home.html'><img src='logo.png' alt="Logo" /></a>
+                </li>
+
+                <li class="nav-search-item">
+                    <div class="search-wrap">
+                        <span class="search-icon" id="mangaSearchBtn" style="cursor: pointer;"><i class="fas fa-search"></i></span>
+                        <input type="text" id="mangaSearchBox" placeholder="Search manga...">
+                    </div>
+                </li>
+
+                <span class="menu">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="all-anime-index.html">Anime</a></li>
+                    <li><a href="manga-index.html">Manga</a></li>
+                    <li><a href="history.html"><i class="fas fa-history"></i> History</a></li>
+                    <li><a href="">Feedback</a></li>
+                </span>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="manga-details-content" style="padding: 20px;">
+        <div id="manga-details-loading" class="manga-loading">Loading manga...</div>
+
+        <div id="manga-details-body" class="manga-details-wrapper" style="display:none;">
+            <div class="manga-details-header">
+                <img id="manga-cover" class="manga-cover" src="" alt="">
+                <div class="manga-header-info">
+                    <h2 id="manga-title"></h2>
+                    <p id="manga-authors" class="manga-authors"></p>
+                    <div id="manga-tags" class="manga-tags"></div>
+                    <p id="manga-status" class="manga-status"></p>
+                    <p id="manga-description" class="manga-description"></p>
+                </div>
+            </div>
+
+            <div class="manga-chapters-header-row">
+                <h3 class="manga-section-title">Chapters</h3>
+                <select id="chapter-language">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="pt-br">Portuguese (BR)</option>
+                    <option value="ja">Japanese</option>
+                </select>
+            </div>
+
+            <div id="manga-chapters-list" class="manga-chapters-list"></div>
+
+            <p class="mangadex-attribution">
+                Manga data and chapter images provided by
+                <a href="https://mangadex.org" target="_blank" rel="noopener">MangaDex</a>.
+                Scanlation group credited on every chapter above.
+            </p>
+        </div>
+    </main>
+
+    <script src="mangadex-api.js"></script>
+    <script src="manga-details.js"></script>
+    <script src="site-bottom-button.js"></script>
+</body>
+</html>
+

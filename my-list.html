@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My List - Mirai</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="apple-touch-icon" href="./favicon-180.png">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./stylesheet.css">
+    <link rel="stylesheet" href="./my-list.css">
+    <link rel="stylesheet" href="./site-bottom-button.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class='nav-bar'>
+                <input type='checkbox' id='check' />
+                <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+                <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+
+                <li class='logo'><a href='home.html'><img src='logo.png' alt="Logo"/></a></li>
+
+                <li class="nav-search-item">
+                    <div class="search-wrap">
+                        <span class="search-icon" id="animeSearchBtn" style="cursor: pointer;"><i class="fas fa-search"></i></span>
+                        <input type="text" id="animeSearchBox" placeholder="Search anime...">
+                        <kbd class="search-shortcut">Ctrl Y</kbd>
+                    </div>
+                </li>
+
+                <span class="menu">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="manga-index.html">Manga</a></li>
+                    <li><a href="my-list.html" class="active-nav-link"><i class="fas fa-list"></i> My List</a></li>
+                    <li><a href="history.html"><i class="fas fa-history"></i> History</a></li>
+                    <li><a href="updates.html">Updated</a></li>
+                </span>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="mylist-main">
+        <div class="mylist-header">
+            <h1 class="mylist-title"><i class="fas fa-bookmark"></i> My Watch List</h1>
+            <div class="mylist-actions">
+                <span class="mylist-count" id="listCount">0 anime</span>
+                <button class="mylist-download-btn" id="downloadBtn"><i class="fas fa-download"></i> Download</button>
+            </div>
+        </div>
+
+        <div id="mylistContent">
+            <div class="mylist-loading">Loading your list...</div>
+        </div>
+    </main>
+
+    <div class="auth-gate" id="authGate">
+        <div class="auth-gate-content">
+            <i class="fas fa-lock"></i>
+            <h2>Account Required</h2>
+            <p>You need an account to use the Watch List feature.</p>
+            <div class="auth-gate-actions">
+                <a href="register.html" class="auth-btn primary">Create Account</a>
+                <a href="index.html" class="auth-btn">Log In</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="my-list.js"></script>
+    <script src="site-bottom-button.js"></script>
+</body>
+</html>
